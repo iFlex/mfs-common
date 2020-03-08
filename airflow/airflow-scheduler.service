@@ -1,0 +1,22 @@
+[Unit]
+Description=AirFlow Scheduling Service
+
+[Service]
+
+User=root
+
+WorkingDirectory=/root/airflow
+
+ExecStart=/root/airflow/airflow-scheduler.sh
+
+SuccessExitStatus=143
+
+TimeoutStopSec=10
+
+Restart=on-failure
+
+RestartSec=5
+
+[Install]
+
+WantedBy=multi-user.target

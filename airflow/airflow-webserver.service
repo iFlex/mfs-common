@@ -1,0 +1,22 @@
+[Unit]
+Description=AirFlow Webserver Service
+
+[Service]
+
+User=root
+
+WorkingDirectory=/root/airflow
+
+ExecStart=/root/airflow/airflow-webserver.sh
+
+SuccessExitStatus=143
+
+TimeoutStopSec=10
+
+Restart=on-failure
+
+RestartSec=5
+
+[Install]
+
+WantedBy=multi-user.target

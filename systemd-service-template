@@ -1,0 +1,24 @@
+#put-at:/etc/systemd/system/
+
+[Unit]
+Description=AirFlow Scheduling Service
+
+[Service]
+
+User=airflow
+
+WorkingDirectory=/home/airflow/workspace
+
+ExecStart=/home/airflow/workspace/airflow
+
+SuccessExitStatus=143
+
+TimeoutStopSec=10
+
+Restart=on-failure
+
+RestartSec=5
+
+[Install]
+
+WantedBy=multi-user.target
